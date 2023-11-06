@@ -52,7 +52,7 @@ humidityDay3.textContent = 'Humidity: ' + weather.list[16].main.humidity + '%';
 resultsDay3.append(humidityDay3);
 
 
-var resultsDay4 = document.querySelector('#weather2');
+var resultsDay4 = document.querySelector('#weather4');
 var location4 = document.createElement('h2');
 location4.textContent = weather.city.name + ' ' + weather.list[24].dt_txt;
 resultsDay4.append(location4);
@@ -66,17 +66,45 @@ resultsDay4.append(windDay4);
 var humidityDay4 = document.createElement('p');
 humidityDay4.textContent = 'Humidity: ' + weather.list[24].main.humidity + '%';
 resultsDay4.append(humidityDay4);
+
+
+var resultsDay5 = document.querySelector('#weather5');
+var location5 = document.createElement('h2');
+location5.textContent = weather.city.name + ' ' + weather.list[32].dt_txt;
+resultsDay5.append(location5);
+var tempDay5 = document.createElement('p');
+tempDay5.textContent = 'Temp: '+weather.list[32].main.temp+' degrees';
+resultsDay5.append(tempDay5);
+
+var windDay5 = document.createElement('p');
+windDay5.textContent = 'Wind: ' + weather.list[32].wind.speed + ' mph';
+resultsDay5.append(windDay5);
+var humidityDay5 = document.createElement('p');
+humidityDay5.textContent = 'Humidity: ' + weather.list[32].main.humidity + '%';
+resultsDay5.append(humidityDay5);
+return;
 }
 
 function fetchResults(query) {
     var url = 'https://api.openweathermap.org/data/2.5/forecast?q='+searchContent.value+'&units=imperial&appid='+apiKey;
 
+    if('click', previousButton) {
+        url = 'https://api.openweathermap.org/data/2.5/forecast?q='+localStorage.getItem('previous')+'&units=imperial&appid='+apiKey;
+    }
+
     fetch(url)
     .then((response) => response.json())
     .then((data) => renderWeather(data));
     
+    localStorage.setItem('previous', searchContent.value);
+    var buttonlist = document.querySelector('.btnlist');
+    var previousButton = document.createElement('button');
+    previousButton.textContent = localStorage.getItem('previous');
+    buttonlist.append(previousButton);
+    return;
     
 }
+
 
 
 
