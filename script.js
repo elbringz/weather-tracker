@@ -19,6 +19,20 @@ var humidity = document.createElement('p');
 humidity.textContent = 'Humidity: ' + weather.list[0].main.humidity + '%';
 results.append(humidity);
 // p for temp, wind, humidity
+var resultsDay2 = document.querySelector('#weather2');
+var location2 = document.createElement('h2');
+location2.textContent = weather.city.name + ' ' + weather.list[8].dt_txt;
+resultsDay2.append(location2);
+var tempDay2 = document.createElement('p');
+tempDay2.textContent = 'Temp: '+weather.list[8].main.temp+' degrees';
+resultsDay2.append(tempDay2);
+
+var windDay2 = document.createElement('p');
+windDay2.textContent = 'Wind: ' + weather.list[8].wind.speed + ' mph';
+resultsDay2.append(windDay2);
+var humidityDay2 = document.createElement('p');
+humidityDay2.textContent = 'Humidity: ' + weather.list[8].main.humidity + '%';
+resultsDay2.append(humidityDay2);
 }
 
 function fetchResults(query) {

@@ -26,5 +26,10 @@ h1 {
 }
 
 #weather1 {
-    text-align: center;
+}
+
+.results {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
