@@ -33,6 +33,39 @@ resultsDay2.append(windDay2);
 var humidityDay2 = document.createElement('p');
 humidityDay2.textContent = 'Humidity: ' + weather.list[8].main.humidity + '%';
 resultsDay2.append(humidityDay2);
+
+
+
+var resultsDay3 = document.querySelector('#weather3');
+var location3 = document.createElement('h2');
+location3.textContent = weather.city.name + ' ' + weather.list[16].dt_txt;
+resultsDay3.append(location3);
+var tempDay3 = document.createElement('p');
+tempDay3.textContent = 'Temp: '+weather.list[16].main.temp+' degrees';
+resultsDay3.append(tempDay3);
+
+var windDay3 = document.createElement('p');
+windDay3.textContent = 'Wind: ' + weather.list[16].wind.speed + ' mph';
+resultsDay3.append(windDay3);
+var humidityDay3 = document.createElement('p');
+humidityDay3.textContent = 'Humidity: ' + weather.list[16].main.humidity + '%';
+resultsDay3.append(humidityDay3);
+
+
+var resultsDay4 = document.querySelector('#weather2');
+var location4 = document.createElement('h2');
+location4.textContent = weather.city.name + ' ' + weather.list[24].dt_txt;
+resultsDay4.append(location4);
+var tempDay4 = document.createElement('p');
+tempDay4.textContent = 'Temp: '+weather.list[24].main.temp+' degrees';
+resultsDay4.append(tempDay4);
+
+var windDay4 = document.createElement('p');
+windDay4.textContent = 'Wind: ' + weather.list[24].wind.speed + ' mph';
+resultsDay4.append(windDay4);
+var humidityDay4 = document.createElement('p');
+humidityDay4.textContent = 'Humidity: ' + weather.list[24].main.humidity + '%';
+resultsDay4.append(humidityDay4);
 }
 
 function fetchResults(query) {
